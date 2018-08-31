@@ -3,27 +3,28 @@
     <head>
         <meta charset="utf-8">
         {% if title %}
-        <title> {{ title }}</title>
+        <title> {{ title }} </title>
         {% else %}
         <title> Welcome to an informative news site!!! </title>
         {% endif %}
     </head>
     
     <body>
-            <!-- news articles section -->
-            <h3> Top Headlines </h3>
-            <ul> 
-                {% for top_headlines_news_article in top_headlines %}
-                    <li> {{ top_headlines_news_article.title }}</li>
-                {% endfor %}    
-            </ul>
-
             <!-- news sources section -->
             <h3> Sources </h3>
             <ul> 
-                {% for sources_news_source in sources %}
-                    <li> {{ sources_news_source.title }}</li>
+                {% for sources_source in sources %}
+                    <li> {{ sources_source.title }}</li>
                 {% endfor %}    
             </ul>
+
+            <!-- news articles section -->
+            <h3> Top Headlines </h3>
+            <ul> 
+                {% for everything_article in everything %}
+                    <li> {{ everything_article.title }}</li>
+                {% endfor %}    
+            </ul>
+
     </body>
 </html>
