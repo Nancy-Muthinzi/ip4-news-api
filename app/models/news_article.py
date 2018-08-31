@@ -11,6 +11,6 @@ class News_Article:
         self.title = title
         self.description = description
         self.url = url
-        self.url_to_image = url_to_image
+        self.image = image
         self.publisher = publisher
     
