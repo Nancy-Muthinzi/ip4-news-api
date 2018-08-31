@@ -15,9 +15,7 @@
             <!-- news sources section -->
             <h3> Sources </h3>
             <ul> 
-                {% for sources_source in sources %}
-                    <li> {{ sources_source.title }}</li>
-                {% endfor %}    
+                {{macro.displaySourceList(general)}}   
             </ul>
 
             <!-- news articles section -->

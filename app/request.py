@@ -17,15 +17,14 @@ def get_source(category):
     Function to get json to respond to url request
     '''
     get_source_url=source_url.format(category, api_key)
-
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
         get_source_response = json.loads(get_source_data)
 
         source_results = None
 
-        if get_source_response['articles']:
-            source_results_list = get_source_response['articles']
+        if get_source_response['sources']:
+            source_results_list = get_source_response['sources']
             source_results = process_results(source_results_list)
 
     return source_results       

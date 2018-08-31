@@ -12,11 +12,11 @@ def index():
     View root page function that returns the index page and its data
     '''
      #get sources
-    source = get_source('sources')
+    source_general = get_source('general')
     # print(sources)
 
     title = 'Home - Welcome to the most informative news site online!!!'
-    return render_template('index.html', title = title, sources = source)
+    return render_template('index.html', title = title, general = source_general)
 
     #get articles
     # everything_articles = get_article()
