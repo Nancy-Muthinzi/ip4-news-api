@@ -13,10 +13,10 @@ def index():
     '''
      #get sources
     source = get_source('sources')
-    print(sources)
+    # print(sources)
 
     title = 'Home - Welcome to the most informative news site online!!!'
-    return render_template('index.html', title = title, sources = sources)
+    return render_template('index.html', title = title, sources = source)
 
     #get articles
     # everything_articles = get_article()

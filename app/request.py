@@ -24,8 +24,8 @@ def get_source(category):
 
         source_results = None
 
-        if get_source_response['results']:
-            source_results_list = get_source_response['results']
+        if get_source_response['articles']:
+            source_results_list = get_source_response['articles']
             source_results = process_results(source_results_list)
 
     return source_results       
@@ -41,7 +41,7 @@ def process_results(source_results_list):
         source_results: list of source objects
     '''
     source_results = []
-    for source_item in source:
+    for source_item in source_results_list:
         id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description')
@@ -49,8 +49,11 @@ def process_results(source_results_list):
         category = source_item.get('category')
         language = source_item.get('language')
         country = source_item.get('country')
-    
-        return source_results            
+
+        new_stuff = Source(id,name,description,url,category,language,country)
+        source_results.append(new_stuff)
+
+    return source_results            
 
 # #Getting article url
 # article = app.config['NEWS_API_ARTICLE_URL']
