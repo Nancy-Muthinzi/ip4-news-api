@@ -65,7 +65,7 @@ def process_results(news_article_results_list):
     news_article_results = []
     for news_article_item in news_article:
         id = news_article_item.get('id')
-        name = news_article.get('name')
+        name = news_article_item.get('name')
         author = news_article_item.get('author')
         title = news_article_item.get('title')
         description = news_article_item.get('description')
@@ -78,3 +78,23 @@ def process_results(news_article_results_list):
             news_article_results.append(news_article_object)
 
         return news_article_results    
+
+def process_results(news_source_results_list):
+    '''
+    This function processes the news_source results and transfers them to a list of objects
+    
+    Args:
+        news_source_list: dictionaties that contain news_source details
+
+    Returns:
+        news_source_results: list of news_source objects
+    '''
+    news_source_results = []
+    for news_source_item in news_source:
+        id = news_source_item.get('id')
+        name = news_source_item.get('name')
+        description = news_source_item.get('description')
+        url = news_source_item.get('url')
+        category = news_source_item.get('category')
+    
+        return news_source_results            
