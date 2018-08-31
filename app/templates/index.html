@@ -8,7 +8,22 @@
         <title> Welcome to an informative news site!!! </title>
         {% endif %}
     </head>
+    
     <body>
+            <!-- news articles section -->
+            <h3> Top Headlines </h3>
+            <ul> 
+                {% for top_headlines_news_article in top_headlines %}
+                    <li> {{ top_headlines_news_article.title }}</li>
+                {% endfor %}    
+            </ul>
 
+            <!-- news sources section -->
+            <h3> Sources </h3>
+            <ul> 
+                {% for sources_news_source in sources %}
+                    <li> {{ sources_news_source.title }}</li>
+                {% endfor %}    
+            </ul>
     </body>
 </html>
