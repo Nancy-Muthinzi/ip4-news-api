@@ -13,5 +13,4 @@ class News_Article:
         self.url = url
         self.url_to_image = url_to_image
         self.publisher = publisher
-        self.language = languange
-        self.country = country
+    

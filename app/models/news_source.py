@@ -9,7 +9,7 @@ class News_Source:
         self.name = name
         self.description = description
         self.url = url
-        self.catergory = catergory
+        self.catergory = category
         self.language = languange
         self.country = country
 
