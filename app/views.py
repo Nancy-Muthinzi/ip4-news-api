@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from app import app
 from .request import get_source, search_source
 # from .request import get_article
@@ -16,7 +16,14 @@ def index():
     # print(sources)
 
     title = 'Home - Welcome to the most informative news site online!!!'
-    return render_template('index.html', title = title, general = source_general)
+
+    search_source = request.args.get('search_query')
+
+    if search_source:
+        return redirect(url_for('search', source_name = search_source))
+
+    else:    
+        return render_template('index.html', title = title, general = source_general)
 
 @app.route('/search/<source_name>')
 def search(source_name):
