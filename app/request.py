@@ -52,7 +52,22 @@ def process_results(source_results_list):
         new_stuff = Source(id,name,description,url,category,language,country)
         source_results.append(new_stuff)
 
-    return source_results            
+    return source_results        
+
+def search_source(source_name):
+
+    search_source_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'.format(api_key, source_name)
+    with urllib.request.urlopen(search_source_url) as url:
+        search_source_data = url.read()
+        search_source_response = json.loads(search_source_data)
+
+        search_source_results = None
+
+        if search_source_response['sources']:
+            search_source_list = search_source_response['sources']
+            search_source_results = process_results (search_source_list)
+
+            return search_source_results
 
 # #Getting article url
 # article = app.config['NEWS_API_ARTICLE_URL']
