@@ -18,7 +18,17 @@ def index():
     title = 'Home - Welcome to the most informative news site online!!!'
     return render_template('index.html', title = title, general = source_general)
 
-@app.route    
+@app.route('/search/<source_name>')
+def search(source_name):
+    '''
+    View function to display search results
+    '''
+    source_name_list = source_name.split(" ")
+    source_name_format = "+".join(source_name_list)
+    searched_sources = search_source(source_name_format)
+    title = f'search results for {source_name}'
+
+    return render_template('search.html', sources = searched_sources)
 
     #get articles
     # everything_articles = get_article()
