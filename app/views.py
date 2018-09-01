@@ -13,7 +13,7 @@ def index():
     '''
      #get sources
     source_general = get_source('general')
-    # print(sources)
+    print(source_general)
 
     title = 'Home - Welcome to the most informative news site online!!!'
 
@@ -46,10 +46,13 @@ def search(source_name):
 
    
 
-@app.route('/news/<int:news_id>')
-def news(news_id):
+@app.route('/source/<int:id>')
+def source(source_id):
 
     '''
     View news page function that returns the news details page and its data
     '''
-    return render_template('news.html',id = news_id)
+    source = get_source(id)
+    title = f'{source.title}'
+    
+    return render_template('source.html',id = source_id)

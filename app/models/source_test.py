@@ -1,7 +1,7 @@
 import unittest
 from models import news_source
 
-News_Source = news_source.News_Source
+Source = source.Source
 
 class SourceTest(unittest.TestCase):
     '''

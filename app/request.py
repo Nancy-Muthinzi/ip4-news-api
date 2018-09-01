@@ -27,14 +27,14 @@ def get_source(category):
             source_results_list = get_source_response['sources']
             source_results = process_results(source_results_list)
 
-    return source_results       
+    return source_results  
 
 def process_results(source_results_list):
     '''
     This function processes the source results and transfers them to a list of objects
     
     Args:
-        source_list: dictionaties that contain news_source details
+        source_list: list of dictionaties that contain news_source details
 
     Returns:
         source_results: list of source objects

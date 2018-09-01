@@ -1,5 +1,5 @@
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
 <!-- Styles block -->
 
@@ -28,7 +28,7 @@
 
             <div class="container">
                 <form>
-                    <input type="text" name="movie_query" placeholder="Search for a News Source ..." class="form-control">
+                    <input type="text" name="source_query" placeholder="Search for a News Source ..." class="form-control">
                     <input type="submit"  value="Submit" class="btn btn-primary">
                 </form>
             
@@ -36,7 +36,7 @@
 
             <h3> News Sources </h3>
             <ul> 
-                {{macro.displaySourceList(general)}}   
+                {{ macro.displaySourceList(general) }}   
             </ul>
 
             <!-- news articles section -->
