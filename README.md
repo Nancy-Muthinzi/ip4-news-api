@@ -12,7 +12,7 @@ With this application, a user can:
 
 
 ## SETUP/INSTALLATION REQUIREMENTS
-To be able to run this application, you need to view it from my deployed site on heroku:
+To be able to view or use the application, here's the link to a live site that is deployed on Github pages: https://nancy-muthinzi.github.io/ip4-news-api/
 
 ## KNOWN BUGS
 This is still a work in progress but for any issues encountered and any contributions to the code, kindly reach out to me on my email address: nanciekathini@gmail.com.

@@ -39,10 +39,12 @@ def search(source_name):
 
     #get articles
     article_general = get_article('general')
-    print(article_general)
+    article_business = get_article('business')
+    article_technology = get_article('technology')
+    article_sports = get_article('sports')
 
     title = 'Home - Welcome to the most informative news site online!!!'
-    return render_template('index.html', title = title, general = source_general)
+    return render_template('index.html', title = title, general = article_general, business = article_business, technology = article_technology, sports = article_sports)
 
    
 
