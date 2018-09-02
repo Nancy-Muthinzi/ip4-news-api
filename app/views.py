@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from app import app
 from .request import get_source, search_source
-# from .request import get_article
+from .request import get_article, search_article
 
 
 # Views
@@ -38,11 +38,11 @@ def search(source_name):
     return render_template('search.html', sources = searched_sources)
 
     #get articles
-    # everything_articles = get_article()
-    # print(everything)
+    article_general = get_article('general')
+    print(article_general)
 
-    # title = 'Home - Welcome to the most informative news site online!!!'
-    # return render_template('index.html', title = title, everything = everything)
+    title = 'Home - Welcome to the most informative news site online!!!'
+    return render_template('index.html', title = title, general = source_general)
 
    
 
