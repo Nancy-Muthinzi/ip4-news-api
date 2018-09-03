@@ -18,26 +18,21 @@
         <title> Welcome to an informative news site!!! </title>
         {% endif %}
     
-            {% block content %}
+    {% block content %}
 
-            <div class="container">
-                <form>
-                    <input type="text" name="source_query" placeholder="Search for a News Source ..." class="form-control">
-                    <input type="submit"  value="Submit" class="btn btn-primary">
-                </form>
+ <div class="container-fluid">
+    <form>
+        <input type="text" name="source_query" placeholder="Search for a News Source ..." class="form-control">
+        <input type="submit"  value="Submit" class="btn btn-primary">
+    </form>
             
-            </div>
-            <!-- news sources section -->
-            <h3> News Sources </h3>
-            <ul> 
-                {{ macro.displaySourceList(general) }}   
-            </ul>
+            
+     <!-- news sources section -->
+    <h3> News Sources </h3>
+    
+    <div class="row">
+        {{ macro.displaySourceList(sources) }} 
+    </div>
 
-            <!-- news articles section -->
-            <h3> News Articles </h3>
-            <ul> 
-                    {{ macro.displayArticleList(general) }}   
-                </ul>
-            
-            {% endblock %}    
+{% endblock %}    
     
