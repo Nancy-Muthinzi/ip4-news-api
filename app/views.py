@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from app import app
-from .request import get_source, search_source
+from .request import get_source, search_source,get_article
 # from .request import get_article, search_article
 
 
@@ -12,14 +12,17 @@ def index():
     View root page function that returns the index page and its data
     '''
      #get sources
-    sources = get_source('technology')
-    print(sources)
+    general = get_source('general')
+    technology = get_source('technology')
+    business = get_source('business')
+    entertainment = get_source('entertainment')
+    sports = get_source('sports')
 
     title = 'Home - Welcome to the most informative news site online!!!'
 
     # search_source = request.args.get('search_query')
 
-    return render_template('index.html', title = title, sources = sources)
+    return render_template('index.html', title = title, technology = technology, business = business, entertainment = entertainment, sports = sports)
 
 
 
@@ -44,13 +47,13 @@ def search(source_name):
 
    
 
-@app.route('/source/<id>')
-def source(source_id):
+@app.route('/source/<string:id>')
+def source(id):
 
     '''
     View news page function that returns the news details page and its data
     '''
-    source = get_source(id)
-    title = f'{source.title}'
+    source = get_article(id)
+    print(source)
     
-    return render_template('source.html',id = source_id)
+    return render_template('source.html',source = source)
