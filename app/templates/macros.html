@@ -1,15 +1,16 @@
 {% macro displaySourceList(sources) %}
     {% for item in sources %}
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 article-card">
-            <h3><a href="/source/{{item.id}}"> {{ item.name }}</a> </h3>
-            <p>{{ item.language }} </p>
-            <li class="text-center">
-                <a href="/article/{{item.url}}">
-                    {{ item.description }}</a>
-            </li>
-            <li>{{item.name}}</li>
-    
-    </div>
+
+
+    <div class="card mb-10 col-md-3" style="margin-bottom: 10px">
+        <a class="list-group-item list-group-item-action active" href="/source/{{item.id}}">
+            <li style="list-style: none">{{item.name}}</li>
+
+        </a>
+        <p>{{ item.description }} </p>
+        <a href="{{item.url}}">Read more ...</a>
+
+</div> 
     {% endfor %}
 {% endmacro %}
 
