@@ -22,7 +22,7 @@ def index():
 
     # search_source = request.args.get('search_query')
 
-    return render_template('index.html', title = title, technology = technology, business = business, entertainment = entertainment, sports = sports)
+    return render_template('index.html', title = title, general = general, technology = technology, business = business, entertainment = entertainment, sports = sports)
 
 
 
